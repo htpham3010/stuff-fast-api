@@ -1,0 +1,14 @@
+# Git
+.git
+.gitignore
+
+.idea
+__pycache__
+/*/__pycache__
+store
+
+#enviroment
+.env
+.venv
+env/
+venv/
