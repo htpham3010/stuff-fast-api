@@ -4,11 +4,21 @@ from fastapi.responses import RedirectResponse
 from routes.users import user_router
 from routes.events import event_router
 from database.connection import Settings
+from fastapi.middleware.cors import CORSMiddleware
 
 import uvicorn
 
 app = FastAPI()
 
+origins = ["*"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 settings = Settings()
 
 # Register routes

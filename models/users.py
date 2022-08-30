@@ -13,7 +13,7 @@ class User(Document):
         schema_extra = {
             "example": {
                 "email": "fastapi@example.com",
-                "username": "stuffastapi",
+                "password": "stuffastapi",
             }
         }
 
@@ -21,3 +21,8 @@ class User(Document):
 class UserLogIn(BaseModel):
     email: EmailStr
     password: str
+
+
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str
